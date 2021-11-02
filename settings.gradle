@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "LintIssue"
 include ':app'
+include ':app:mymodule'
