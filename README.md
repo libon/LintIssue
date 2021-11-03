@@ -5,7 +5,7 @@ This project demonstrates an issue with inconsistent behavior with lint reportin
 
 Summary
 -------
-A submodule calls a function which requires a dangerious permission, without checking first if the permission is granted.
+A submodule calls a function which requires a dangerous permission, without checking first if the permission is granted.
 
 `./gradlew :app:lintDebug` produces inconsistent results: sometimes it reports `MissingPermission`, sometimes it doesn't, depending on if/where a `<uses-permission>` is declared in a manifest file.
 
@@ -64,6 +64,6 @@ Another way to represent this is in table format:
 |permission in app manifest|permission in module manifest|`./gradlew lintDebug`|`./gradlew :app:lintDebug`|
 |---|---|---|---|
 |❌|❌|Finds issue|Finds issue|
-|✅|❌|Finds issue|No issue|
+|✅|❌|Finds issue|**No issue** 👈|
 |❌|✅|Finds issue|Finds issue|
 |✅|✅|Finds issue|Finds issue|
